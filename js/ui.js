@@ -46,6 +46,7 @@ class UI {
                     <th scope="col">Id</th>
                     <th scope="col">Description</th>
                     <th scope="col">Forks</th>
+                    <th scope="col">Created</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -59,6 +60,7 @@ class UI {
             </tbody>
             </table>
         `
+        let date = new Date();
         let repoList = document.querySelector('.repo-list')
         let tableRow = ''
         repos.forEach((repo, index) => {
@@ -69,6 +71,7 @@ class UI {
                     <td>${repo.id}</td>
                     <td>${repo.description != null ? repo.description : ''}</td>
                     <td>${repo.forks}</td>
+                    <td>${repo.created_at.toString()}</td>
                     <td><a href=${repo.html_url} target='_blank' class='btn btn-sm btn-primary'>Link</a></td>
                 </tr>
             `
